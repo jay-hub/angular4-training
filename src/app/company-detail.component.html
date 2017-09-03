@@ -1,0 +1,29 @@
+<ng-template #nocompany>
+    <div><i>No companies selected.</i></div>
+</ng-template>
+
+<div *ngIf="company else nocompany">
+
+    <h1>{{company.name}}</h1>
+
+    <p><i>{{company.name}} is at {{company.address.street}} in the {{company.address.city}} in {{company.address.province}} province.</i></p>
+
+    <label><input type="checkbox" [(ngModel)]="showAddress"/> Show Address</label> <br> <br>
+
+    <div [hidden]="!showAddress">
+        <fieldset>
+            <label>Street: <input [(ngModel)]="company.address.street"/></label>
+        </fieldset>
+        <fieldset>
+            <label>City: <input [(ngModel)]="company.address.city"/></label>
+        </fieldset>
+        <fieldset>
+            <label>Province: 
+            <select [(ngModel)]="company.address.province">
+                <option *ngFor="let province of provinces">{{province}}</option>
+            </select>
+        </label>
+        </fieldset>
+    </div>
+
+</div>

@@ -6,18 +6,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
+var sample_data_1 = require("./data/sample-data");
+var CompanyListComponent = (function () {
+    function CompanyListComponent() {
+        this.companies = sample_data_1.getSampleData();
     }
-    return AppComponent;
+    return CompanyListComponent;
 }());
-AppComponent = __decorate([
+CompanyListComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        selector: 'my-app',
-        templateUrl: 'app.component.html',
-        styleUrls: ['app.component.css']
+        selector: 'company-list',
+        templateUrl: 'comapany-list.component.html',
+        styleUrls: ['comapany-list.component.css']
     })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], CompanyListComponent);
+exports.CompanyListComponent = CompanyListComponent;
+//# sourceMappingURL=company-list.component.js.map

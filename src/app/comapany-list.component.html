@@ -1,0 +1,11 @@
+<h1>Companies</h1>
+
+<p><i>Select a company.</i></p>
+
+<ul *ngFor="let c of companies">
+    <li [ngClass]="{selected: c === company}" (click)="company = c">{{ c.name }}</li>
+</ul>
+
+<br/>
+
+<company-detail [company]="company"></company-detail>
