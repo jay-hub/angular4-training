@@ -2,10 +2,15 @@
 
 <p><i>Select a company.</i></p>
 
-<ul *ngFor="let c of companies">
-    <li [ngClass]="{selected: c === company}" (click)="company = c">{{ c.name }}</li>
-</ul>
 
-<br/>
+<div *ngIf="isbusy"><i>Companies are loading...</i></div>
 
-<company-detail [company]="company"></company-detail>
+
+<div *ngIf="!isbusy">
+    <ul *ngFor="let c of companies">
+        <li [ngClass]="{selected: c === company}" (click)="company = c">{{ c.name }}</li>
+    </ul>
+</div>
+<br/><br/>
+
+<company-detail (shift)="shiftCompany($event)" [company]="company"></company-detail>

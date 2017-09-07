@@ -1,6 +1,7 @@
 
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Company } from "./models/company";
+
 
 @Component({
     moduleId: module.id,
@@ -18,11 +19,15 @@ export class CompanyDetailComponent {
 
     @Input() company: Company
 
-    provinces = ['Western', 'Eastern', 'Southern', 'Nothern']
+    @Output() shift = new EventEmitter<number>();
 
     showAddress: boolean = true;
 
-    toggleAddress() {
-        this.showAddress = !this.showAddress;
+    previous(){
+        this.shift.emit(-1)
+    }
+
+    next(){
+        this.shift.emit(1)
     }
 }
