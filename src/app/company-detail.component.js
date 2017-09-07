@@ -12,14 +12,11 @@ var core_1 = require("@angular/core");
 var company_1 = require("./models/company");
 var CompanyDetailComponent = (function () {
     function CompanyDetailComponent() {
-        this.shift = new core_1.EventEmitter();
+        this.provinces = ['Western', 'Eastern', 'Southern', 'Nothern'];
         this.showAddress = true;
     }
-    CompanyDetailComponent.prototype.previous = function () {
-        this.shift.emit(-1);
-    };
-    CompanyDetailComponent.prototype.next = function () {
-        this.shift.emit(1);
+    CompanyDetailComponent.prototype.toggleAddress = function () {
+        this.showAddress = !this.showAddress;
     };
     return CompanyDetailComponent;
 }());
@@ -27,10 +24,6 @@ __decorate([
     core_1.Input(),
     __metadata("design:type", company_1.Company)
 ], CompanyDetailComponent.prototype, "company", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], CompanyDetailComponent.prototype, "shift", void 0);
 CompanyDetailComponent = __decorate([
     core_1.Component({
         moduleId: module.id,

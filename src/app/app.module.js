@@ -8,15 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
 var platform_browser_1 = require("@angular/platform-browser");
-var http_1 = require("@angular/http");
 var app_component_1 = require("./app.component");
 var company_list_component_1 = require("./company-list.component");
 var company_detail_component_1 = require("./company-detail.component");
-var address_component_1 = require("./address.component");
-var data_service_1 = require("./services/data.service");
-var logger_service_1 = require("./services/logger.service");
-var angular_in_memory_web_api_1 = require("angular-in-memory-web-api");
-var in_memory_data_service_1 = require("./services/in-memory-data.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -24,10 +18,9 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMoemoryDataService)],
-        declarations: [app_component_1.AppComponent, company_list_component_1.CompanyListComponent, company_detail_component_1.CompanyDetailComponent, address_component_1.AddressComponent],
-        bootstrap: [app_component_1.AppComponent],
-        providers: [data_service_1.DataService, logger_service_1.LoggerService]
+        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
+        declarations: [app_component_1.AppComponent, company_list_component_1.CompanyListComponent, company_detail_component_1.CompanyDetailComponent],
+        bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
 exports.AppModule = AppModule;
