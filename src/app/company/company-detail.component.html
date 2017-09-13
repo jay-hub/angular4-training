@@ -1,0 +1,17 @@
+<ng-template #nocompany>
+    <div><i>No companies selected.</i></div>
+</ng-template>
+
+<div *ngIf="company else nocompany">
+
+    <h1><button (click)="previous()">< &nbsp;</button> {{company.name}} <button (click)="next()">&nbsp; ></button></h1>
+
+    <p><i>{{company.name}} is at {{company.address.street}} in the {{company.address.city}} in {{company.address.province}} province.</i></p>
+
+    <label><input type="checkbox" [(ngModel)]="showAddress"/> Show Address</label> <br> <br>
+
+    <div *ngIf="showAddress">
+        <address [address]="company.address"></address>
+    </div>
+
+</div>

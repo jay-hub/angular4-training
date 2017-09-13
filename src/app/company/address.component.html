@@ -1,0 +1,15 @@
+<div>
+    <fieldset>
+        <label>Street: <input [(ngModel)]="address.street"/></label>
+    </fieldset>
+    <fieldset>
+        <label>City: <input [(ngModel)]="address.city"/></label>
+    </fieldset>
+    <fieldset>
+        <label>Province: 
+            <select [(ngModel)]="address.province">
+                <option *ngFor="let province of provinces">{{province}}</option>
+            </select>
+        </label>
+    </fieldset>
+</div>
